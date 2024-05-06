@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <!--css 호출부-->
+    <script src="Login.js"></script>
+    <link rel="stylesheet" href="/Css_Folder/Header_style.css">
+    <link rel="stylesheet" href="/Css_Folder/LoginPage_style.css">
+    
+</head>
+<body class="text-center">
+     <!--상단의 헤더와 메뉴-->
+     <header>
+        <h1><a href="/Html_Folder/Main.html">부동산 모아</a></h1>
+    </header>
+     <!--  html 전체 영역을 지정하는 container -->
+     <div class="container">
+        <div class="global-cont">
+          <div class="inner-cont">
+            <div class="sign">
+              <span class="active sign-in">로그인</span>
+              <span class="sign-up">회원가입</span>
+            </div>
+            <div class="sign-in-up">
+              <form class="sign-in-form active">
+                <input type="text" id="id" placeholder="아이디">
+                <input type="password" id="pw"  placeholder="비밀번호">
+                <span>
+                  <input type="checkbox"> <label>로그인 상태 유지</label>
+                </span>
+                <!-- <a href="#">비밀번호 찾기</a>-->
+                <a href="/Html_Folder/Main.html">로그인</a>
+              </form>
+              <form class="sign-up-form">
+                <input type="text" id="id2" placeholder="이메일">
+                <input type="password" id="pw2" placeholder="비밀번호">
+                <input type="password" id="r_pw2" placeholder="비밀번호 확인">
+                <input type="submit" value="회원가입">
+              </form>
+              <div class="divider">
+                <!--<span>간편 로그인</span>
+              </div>
+              <div class="social-login">
+                <button class="kakao">
+                    <img src="/Image_Folder/kakao_login.png" alt="Kakao" onclick="">
+                </button>
+                <button class="naver">
+                    <img src="/Image_Folder/naver_login.png" alt="Naver" onclick="">
+                </button>
+                <div class="clearfix"></div>
+              </div>
+            </div>-->
+          </div>
+        </div>
+      </div>
+    
+      <script src="Login.js"></script>
+      <script>
+        // 간단한 로그인 기능 구현
+        function login() {
+          var id = document.getElementById('id').value;
+          var pw = document.getElementById('pw').value;
+
+          //로그인 체크
+          if(id.value === "" || pw.value === ""){
+              alert('아이디 또는 비밀번호를 확인하세요');
+              location.href='/Html_Folder/Main.html';
+          }else{
+              alert('로그인 성공');
+              location.href='/Html_Folder/Main.html';
+          }
+      }
+
+      function create_id() {
+        var id = document.querySelector('#id');
+        var pw = document.querySelector('#pw');
+        var r_pw = document.querySelector('#r_pw');
+
+        if(id.value === "" || pw.value === "" || r_pw.value === ""){
+            alert("회원가입을 할 수 없습니다.")
+        }else{
+            if(pw.value !== r_pw.value){
+                alert("비밀번호를 확인해주세요.")
+            }else{
+              alert("회원가입 완료")
+              location.href =''
+        }
+    }
+}
+
+
+// 로그인 <> 회원가입 탭 움직쓰
+let spanOption = document.querySelectorAll(".sign span");
+
+spanOption.forEach(function (span) {
+    span.addEventListener("click", function (e) {
+        
+        //Remove class active
+        e.target.parentElement.querySelectorAll(".active").forEach(function (element) {
+            element.classList.remove("active");
+        });
+        //Add class active
+        e.target.classList.add("active");
+      
+       if (e.target.classList.contains("sign-in")) {
+         
+        document.querySelectorAll(".sign-in-up form").forEach(function (element) {
+            element.classList.remove("active");
+        });
+         
+        document.querySelector(".sign-in-form").classList.add("active");
+        
+       } else {
+         
+        document.querySelectorAll(".sign-in-up form").forEach(function (element) {
+            element.classList.remove("active");
+        });
+         
+        document.querySelector(".sign-up-form").classList.add("active");
+       }
+    })
+})
+    </script>
+
+</body>
+</html>

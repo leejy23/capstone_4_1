@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <!--css 호출부-->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/Css_Folder/Header_style.css">
+    <link rel="stylesheet" href="/Css_Folder/Like_style.css">
+    
+</head>
+<body class="text-center">
+     <!--상단의 헤더와 메뉴-->
+     <header>
+        <h1><a href="/Html_Folder/Main.html">부동산 모아</a></h1>
+    </header>
+    <nav>
+      <ul>
+          <li><a href="/Html_Folder/Location.html">지역탭</a></li>
+          <li><a href="/Html_Folder/Like.html">관심목록</a></li>
+          <li><a href="/Html_Folder/UserInfo.html">계정정보</a></li>
+          <li><a href="/Html_Folder/LoginPage.html">test</a></li>    <!--로그인시 회원가입 버튼 없어지게 수정-->
+      </ul>
+  </nav>  
+     <!--  html 전체 영역을 지정하는 container -->
+     <section id="tabs" class="project-tab">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <nav>
+                      <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">찜한 방</a>
+                          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">찜한 단지</a>
+                          <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">관심 목록</a>
+                      </div>
+                  </nav>
+                  <div class="tab-content" id="nav-tabContent">
+                      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                          <table class="table" cellspacing="0">
+                              <thead>
+                                  <tr>
+                                      <th>지역</th>
+                                      <th>주소</th>
+                                      <th>평수</th>
+                                      <th>가격</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td><a href="#">대전</a></td>
+                                      <td>대전 광역시1</td>
+                                      <td>8평</td>
+                                      <td>500/35</td>
+                                  </tr>
+                                  <tr>
+                                      <td><a href="#">대전</a></td>
+                                      <td>대전 광역시2</td>
+                                      <td>30평</td>
+                                      <td>1억/350</td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="#">서울</a></td>
+                                    <td>서울 특별시 어쩌구저쩌구 1</td>
+                                    <td>30평</td>
+                                    <td>1억/350</td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="#">서울</a></td>
+                                    <td>서울 특별시 어쩌구저쩌구 1</td>
+                                    <td>100평</td>
+                                    <td>99억/9900000</td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                          <table class="table" cellspacing="0">
+                            <thead>
+                              <tr>
+                                  <th>지역</th>
+                                  <th>주소</th>
+                                  <th>평수</th>
+                                  <th>가격</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td><a href="#">대전</a></td>
+                                  <td>대전 광역시 어쩌구저쩌고 1</td>
+                                  <td>8평</td>
+                                  <td>500/35</td>
+                              </tr>
+                              <tr>
+                                  <td><a href="#">대전</a></td>
+                                  <td>대전 광역시 어쩌구저쩌구 2</td>
+                                  <td>30평</td>
+                                  <td>1억/350</td>
+                              </tr>
+                              <tr>
+                                <td><a href="#">서울</a></td>
+                                <td>서울 특별시 어쩌구저쩌구 1</td>
+                                <td>30평</td>
+                                <td>1억/350</td>
+                              </tr>
+                              <tr>
+                                <td><a href="#">서울</a></td>
+                                <td>서울 특별시 어쩌구저쩌구 1</td>
+                                <td>100평</td>
+                                <td>99억/9900000</td>
+                              </tr>
+                          </tbody>
+                          </table>
+                      </div>
+                      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                          <table class="table" cellspacing="0">
+                            <thead>
+                              <tr>
+                                  <th>지역</th>
+                                  <th>주소</th>
+                                  <th>평수</th>
+                                  <th>가격</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td><a href="#">대전</a></td>
+                                  <td>대전 광역시 어쩌구저쩌고 1</td>
+                                  <td>8평</td>
+                                  <td>500/35</td>
+                              </tr>
+                              <tr>
+                                  <td><a href="#">대전</a></td>
+                                  <td>대전 광역시 어쩌구저쩌구 2</td>
+                                  <td>30평</td>
+                                  <td>1억/350</td>
+                              </tr>
+                              <tr>
+                                <td><a href="#">서울</a></td>
+                                <td>서울 특별시 어쩌구저쩌구 1</td>
+                                <td>30평</td>
+                                <td>1억/350</td>
+                              </tr>
+                              <tr>
+                                <td><a href="#">서울</a></td>
+                                <td>서울 특별시 어쩌구저쩌구 1</td>
+                                <td>100평</td>
+                                <td>99억/9900000</td>
+                              </tr>
+                          </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+</body>
+</html>

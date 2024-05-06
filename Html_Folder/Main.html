@@ -1,0 +1,58 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>부동산 정보 공유 플랫폼</title>
+        <!--css 호출부-->
+        <link rel="stylesheet" href="/Css_Folder/Header_style.css">
+        <link rel="stylesheet" href="/Css_Folder/Search_style.css">
+        <style>
+          .div-container {
+            width: 100%;
+            text-align: center;
+          }
+          .div-container div {
+            display: inline-block;
+          }
+        </style>
+    </head>
+    <body>
+        <!--상단의 헤더와 메뉴-->
+        <header>
+            <h1><a href="/Html_Folder/Main.html">부동산 모아</a></h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="/Html_Folder/Location.html">지역탭</a></li>
+                <li><a href="/Html_Folder/Like.html">관심목록</a></li>
+                <li><a href="/Html_Folder/UserInfo.html">계정정보</a></li>
+                <li><a href="/Html_Folder/LoginPage.html">test님 어서오세요!</a></li>   <!--로그인시 로그아웃으로 바뀌게 코드 수정-->
+            </ul>
+        </nav>
+
+        <!--중앙의 검색창 부분-->
+        <div class="search-container" style="padding: 10%;">
+            <input type="text" id="search" placeholder="지역 또는 건물 이름을 입력하세요">
+            <button type="submit"><img src="/Image_Folder/search_icon.png" alt="검색 아이콘"></button>
+        </div>
+        <!--중앙의 기사 부분-->
+        <div class="div-container">
+          <div style="padding: 5%;">
+            <h2><strong>부동산 소식</strong></h2>
+            <hr>
+            <a href="/Html_Folder/Location.html" style="color: black;">뉴스기사 1</a><br>
+            <a href="/Html_Folder/Location.html" style="color: black;">뉴스기사 12</a><br>
+            <a href="/Html_Folder/Location.html" style="color: black;">뉴스기사 13333333333333333333333333333333333333</a><br>
+            <a href="/Html_Folder/Location.html" style="color: black;">뉴스기사 12</a><br>
+            <a href="/Html_Folder/Location.html" style="color: black;">뉴스기사 12</a><br>
+            <a href="/Html_Folder/Location.html" style="color: black;">뉴스기사 12</a><br>
+          </div>
+          <div style="padding: 5%;">
+            <img src="/Image_Folder/news11.jpg" alt="이미지 설명">
+          </div>
+        </div>
+
+    </body>
+    </html>

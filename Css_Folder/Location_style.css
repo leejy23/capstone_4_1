@@ -1,0 +1,8 @@
+.combo-box-container {
+    display: flex;
+}
+
+select {
+    width: 300px;
+    margin-right: 10px;
+}

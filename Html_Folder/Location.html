@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부동산 정보 공유 플랫폼</title>
+    <!--css 호출부-->
+    <link rel="stylesheet" href="/Css_Folder/Header_style.css">
+    <link rel="stylesheet" href="/Css_Folder/Location_style.css">
+    <!--카카오 지도 api-->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c87a248dba8c6de528246bb98f97761b"></script>
+    
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c87a248dba8c6de528246bb98f97761b&libraries=services,clusterer"></script>
+</head>
+<body>
+     <!--상단의 헤더와 메뉴-->
+    <header>
+        <h1><a href="/Html_Folder/Main.html">부동산 모아</a></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/Html_Folder/Location.html">지역탭</a></li>
+            <li><a href="/Html_Folder/Like.html">관심목록</a></li>
+            <li><a href="/Html_Folder/UserInfo.html">계정정보</a></li>
+            <li><a href="/Html_Folder/LoginPage.html">test</a></li>
+        </ul>
+    </nav>
+    <br><br><br><br><br><br>
+    <!--지역 선택하는 콤보박스-->
+    <div class="combo-box-container">
+        <select>
+            <option value="option1">시</option>
+            <option value="option2">서울</option>
+            <option value="option3">대전</option>
+            <option value="option3">대구</option>
+            <option value="option3">부산</option>
+            <option value="option3">인천</option>
+            <option value="option3">광주</option>
+            <option value="option3">울산</option>
+        </select>
+
+        <select>
+            <option value="option1">군</option>
+            <option value="option2">옵션 2</option>
+            <option value="option3">옵션 3</option>
+        </select>
+
+        <select>
+            <option value="option1">구</option>
+            <option value="option2">옵션 2</option>
+            <option value="option3">옵션 3</option>
+        </select>
+
+        <button type="submit">검색</button>
+    </div>
+    <!--카카오 지도-->
+    <br>
+    <div id="map" style="width:1000px;height:800px;">
+        <script>
+            var container = document.getElementById('map'); // 지도를 표시할 div
+            var options = {
+                center: new kakao.maps.LatLng(37.5665, 126.9780), // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };
+        
+            var map = new kakao.maps.Map(container, options); // 지도 생성 및 객체 리턴
+
+            var ps = new kakao.maps.services.Places();
+
+            searchPlaces();
+             var ps = new kakao.maps.services.Places();
+            function searchPlaces(){
+                var keyword = document.getElementById('keyword').value;
+                if(!keyword.replace(/^\s+|\s+$/g, '')){
+                    alert('키워드를 입력해주세요!');
+                    return false;
+                }
+                //장소검색 객체를 통해 키워드로 장소검색을 요청
+                ps.keywordSearch(keyword, placesSearchCB);
+            }
+            function placesSearchCB(data, status, pagination){
+                if(status === kakao.maps.services.Status.OK){
+                    //정상적으로 검색 완료 시 
+                    //검색 목록과 마커 표출
+                    displayPlaces(data);
+
+                }else{
+                    alert('검색 결과 중 오류가 발생했습니다.');
+                    return;
+                }
+            }
+            function search(){
+                var input = document.getElementById('keyword').value; //키워드로 장소 검색
+                ps.keywordSearch(input, placesSearchCB);
+            }
+
+            function placesSearchCB (data, status, pagination){
+                if(status === kakao.maps.services.Status.OK){
+                    //검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+                    //latlngbounds 객체에 좌표를 추가함
+                    var bounds = new kakao.maps.LatLngBounds();
+                    for(var i=0; i<data.length; i++){
+                        displatMaker(data[i]);
+                        bounds.extend(new kakao.maps.Lating(data[i].y, data[i].x));
+                    }
+                    //검색된 장소 위치를 기준으로 지도 범위를 재설정함
+                    map.setBounds(bounds);
+                }
+            }
+        </script>
+    </div>                    
+    <!--검색창-->
+    <script>
+        
+    </script>
+    
+    
+</body>
+</html>
