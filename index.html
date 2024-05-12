@@ -5,6 +5,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>부동산 정보 공유 플랫폼</title>
+        <!--fontawsome 호출부-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!--css 호출부-->
         <link rel="stylesheet" href="/Css_Folder/Header_style.css">
         <link rel="stylesheet" href="/Css_Folder/Search_style.css">
@@ -33,26 +35,66 @@
         </nav>
 
         <!--중앙의 검색창 부분-->
-        <div class="search-container" style="padding: 10%;">
+        <div class="search-container" style="padding: 5%;">
             <input type="text" id="search" placeholder="지역 또는 건물 이름을 입력하세요">
-            <button type="submit"><img src="/Image_Folder/search_icon.png" alt="검색 아이콘"></button>
+            <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
-        <!--중앙의 기사 부분-->
+        <!--중앙의 기사 테스트 부분-->
         <div class="div-container">
-          <div style="padding: 5%;">
+          <div class="bbs_list_wrap_nomargin">
             <h2><strong>부동산 소식</strong></h2>
             <hr>
-            <a href="/Html_Folder/Location.html" style="color: black;">뉴스기사 1</a><br>
-            <a href="/Html_Folder/Location.html" style="color: black;">뉴스기사 12</a><br>
-            <a href="/Html_Folder/Location.html" style="color: black;">뉴스기사 13333333333333333333333333333333333333</a><br>
-            <a href="/Html_Folder/Location.html" style="color: black;">뉴스기사 12</a><br>
-            <a href="/Html_Folder/Location.html" style="color: black;">뉴스기사 12</a><br>
-            <a href="/Html_Folder/Location.html" style="color: black;">뉴스기사 12</a><br>
+            <table>
+                <colgroup>
+                    <col width="60">
+                    <col width="490">
+                    <col width="90">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th class="last">등록일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="no center">1</td>
+                        <td><a href="https://www.kar.or.kr/pnews/realtynewsview.asp?realtynews=5078">4월 아파트 입주율 5%p 하락…5월 전망은 개선</a></td>
+                        <td class="no center">2024-05-10</td>
+                    </tr>
+                    <tr>
+                        <td class="no center">2</td>
+                        <td><a href="https://www.kar.or.kr/pnews/realtynewsview.asp?realtynews=5077">서울 아파트 월세 하락…작년 1분기 이후 처음 '100만원' 밑으로</a></td>
+                        <td class="no center">2024-05-07</td>
+                    </tr>
+                    <tr>
+                        <td class="no center">3</td>
+                        <td><a href="https://www.kar.or.kr/pnews/realtynewsview.asp?realtynews=5076">서울 아파트값 6주째 상승…전셋값은 50주 연속 올라</a></td>
+                        <td class="no center">2024-05-03</td>
+                    </tr>
+                    <tr>
+                      <td class="no center">4</td>
+                      <td><a href="https://www.kar.or.kr/pnews/realtynewsview.asp?realtynews=5075">분양가 격차 커진다…"광진구 아파트 1채가 서대문구 3.5채 값"</a></td>
+                      <td class="no center">2024-04-23</td>
+                  </tr>
+                  <tr>
+                    <td class="no center">5</td>
+                    <td><a href="https://www.kar.or.kr/pnews/realtynewsview.asp?realtynews=5074">지난해 서울 주택 착공 2만1천가구 불과…연평균 대비 33% 수준</a></td>
+                    <td class="no center">	2024-04-23</td>
+                </tr>
+                </tbody>
+                
+            </table>
           </div>
-          <div style="padding: 5%;">
-            <img src="/Image_Folder/news11.jpg" alt="이미지 설명">
+          <div class="news_image">
+            <img src="https://www.kar.or.kr//share/upload/realtynews/1(63).png_thumb.png" alt="이미지 설명">
           </div>
         </div>
+
+        <!--중앙의 기사 부분-->
+
+          
 
     </body>
     </html>

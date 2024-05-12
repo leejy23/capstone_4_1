@@ -1,23 +1,39 @@
 .search-container {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin: 20px;
 }
 
 #search {
     padding: 10px;
     width: 600px;
+    margin: 5px;
 }
 
 button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
+    background-color: greenyellow;
+    border-color: black;
+    width: 7%;
     padding: 10px;
+    margin: 5px;
     cursor: pointer;
 }
 
 button img {
     width: 20px;
     height: 20px;
+}
+
+.div-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.bbs_list_wrap_nomargin {
+    margin: 2%;
+}
+
+.news_image {
+    margin: 2%;
 }
