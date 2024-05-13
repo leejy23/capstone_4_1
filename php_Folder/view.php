@@ -14,7 +14,7 @@
 
     if(isset($result) && $result->num_rows > 0){
         while($row = $result->fetch_assoc()){
-            echo "이름: ". $row['name'];
+            echo "이름: ". $row['name']."<br>";
             echo "지역: ". $row['location']."<br>";
             echo "형태: ". $row['type']."<br>";
             echo "거래형태: ". $row['billtype']."<br>";
