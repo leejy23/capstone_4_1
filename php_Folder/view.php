@@ -12,7 +12,18 @@
     </style>
 </head>
 <body>
-    <h1>검색결과</h1> 
+<header>
+        <h1><a href="/index.html">부동산 모아</a></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/Html_Folder/Location.html">지역탭</a></li>
+            <li><a href="/Html_Folder/Like.html">관심목록</a></li>
+            <li><a href="/Html_Folder/UserInfo.html">계정정보</a></li>
+            <li><a href="/Html_Folder/LoginPage.html">test</a></li>
+        </ul>
+    </nav>
+    <br><br><br><br><br><br> 
     <script>
         //다시 지역 탭으로 이동하는 기능
         function redirectToView() {
@@ -20,6 +31,10 @@
     }
     </script>
     <div class="search-container" style="padding: 5%;">
+        <?php
+        $search = isset($_GET['search']) ? $_GET['search'] : '';
+        echo "<p><strong>$search</strong> 검색결과</p>";
+        ?>
         <form>
             <input type="button" id="search_button" value="돌아가기" onclick="redirectToView()">
         </form>
@@ -27,8 +42,14 @@
     <?php
     include_once("connect.php");
     $search = isset($_GET['search']) ? $_GET['search'] : '';
-    // 검색어가 포함된 데이터를 검색하는 SQL 쿼리
-    $sql = "SELECT * FROM search WHERE name LIKE '%$search%' OR location LIKE '%$search%' OR type LIKE '%$search%' OR billtype LIKE '%$search%'";
+    $search_terms = explode(',', $search);
+    $sql = "SELECT * FROM search WHERE ";
+    foreach ($search_terms as $term) {
+        $term = trim($term);
+        $sql .= "(name LIKE '%$term%' OR location LIKE '%$term%' OR type LIKE '%$term%' OR billtype LIKE '%$term%') AND ";
+    }
+    // 마지막 AND 제거
+    $sql = substr($sql, 0, -5);
     $result = $conn->query($sql);
     $total_results = $result->num_rows;
     $results_per_page = 10;
@@ -42,7 +63,7 @@
 
     $this_page_first_result = ($page-1)*$results_per_page;
     // 이 페이지의 결과를 가져오는 SQL 쿼리
-    $sql="SELECT * FROM search WHERE name LIKE '%$search%' OR location LIKE '%$search%' OR type LIKE '%$search%' OR billtype LIKE '%$search%' LIMIT $this_page_first_result, $results_per_page";
+    $sql .= " LIMIT $this_page_first_result, $results_per_page";
     $result = $conn->query($sql);
 
     if($total_results > 0){
