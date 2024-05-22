@@ -7,6 +7,7 @@
     <!--css 호출부-->
     <link rel="stylesheet" href="/Css_Folder/Header_style.css">
     <link rel="stylesheet" href="/Css_Folder/Location_style.css">
+    <link rel="stylesheet" href="/Css_Folder/Search_style.css">
     <!--카카오 지도 api-->
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c87a248dba8c6de528246bb98f97761b"></script>
     
@@ -25,43 +26,20 @@
             <li><a href="/Html_Folder/LoginPage.html">test</a></li>
         </ul>
     </nav>
-    <br><br><br><br><br><br>
-    <!--지역 선택하는 콤보박스-->
-    <div class="combo-box-container">
-        <select>
-            <option value="option1">시</option>
-            <option value="option2">서울</option>
-            <option value="option3">대전</option>
-            <option value="option3">대구</option>
-            <option value="option3">부산</option>
-            <option value="option3">인천</option>
-            <option value="option3">광주</option>
-            <option value="option3">울산</option>
-        </select>
-
-        <select>
-            <option value="option1">군</option>
-            <option value="option2">옵션 2</option>
-            <option value="option3">옵션 3</option>
-        </select>
-
-        <select>
-            <option value="option1">구</option>
-            <option value="option2">옵션 2</option>
-            <option value="option3">옵션 3</option>
-        </select>
-
-        <button type="submit">검색</button>
-    </div>
+    <br><br><br><br><br><br>    
     <!--검색결과 테스트 예정-->
     <script>
         function redirectToView() {
-            window.location.href = "/CapStone/capstone_4_1/php_Folder/view.php";
-        }
+        var search = document.getElementById('search').value; // 검색어를 가져옴
+        window.location.href = "/CapStone/capstone_4_1/php_Folder/view.php?search=" + search; // 검색어를 포함하여 view.php로 리다이렉트
+    }
     </script>
-    <form>
-        <input type="button" value="검색 결과 조회하기" onclick="redirectToView()">
-    </form>
+    <div class="search-container" style="padding: 5%;">
+        <form>
+            <input type="text" id="search" placeholder="지역, 거주형태 등을 입력하세요.">
+            <input type="button" id="search_button" value="검색" onclick="redirectToView()">
+        </form>
+    </div>
     <!--카카오 지도-->
     <br>
     <div id="map" style="width:80%; height:600px;">

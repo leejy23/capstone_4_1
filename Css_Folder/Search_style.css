@@ -23,6 +23,17 @@ button {
     cursor: pointer;
 }
 
+/* location의 검색버튼 전용 css */
+#search_button {
+    background-color: greenyellow;
+    border: black solid 1px;
+    border-radius: 10px;
+    width: 7%;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
 .div-container {
     display: flex; 
     justify-content: center; 
